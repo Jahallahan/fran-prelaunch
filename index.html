@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fran – Personalised Activewear</title>
+    <link rel="stylesheet" href="css/tachyons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cormorant+Garamond"
+      rel="stylesheet"
+    />
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="home" class="sans-serif">
+    <div
+      class="vh-100 vh-100 bg--light-grey cover bg-center relative"
+      style="background-image: url(images/banner.png);  background-attachment: fixed; z-index: -999px;"
+    >
+      <h1
+        class="fw4 tracked-tight fixed db ma0"
+        style="font-size: 200px; line-height:100vh"
+      >
+        Fran.
+      </h1>
+    </div>
+    <div class="bg-white relative">
+      <nav id="navigation" class="db dt-l w-100 border-box pa4">
+        <h1 class="db dtc-l v-mid w-100 w-50-l tc tl-l mb2 mb0-l">
+          <span class="f-3 tracked-tight fw4">Fran.</span>
+          <span class="serif f-3 fw4">Personalised Activewear</span>
+        </h1>
+        <div class="db dtc-l v-mid w-100 w-50-l tc tr-l serif">
+          <a
+            class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
+            href="#"
+            title="Home"
+            >Selection</a
+          >
+          <a
+            class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
+            href="#"
+            title="How it Works"
+            >Experience</a
+          >
+          <a
+            class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
+            href="#"
+            title="Blog"
+            >Inspiration</a
+          >
+          <div
+            class=" dib br4 bg-moon-gray"
+            style="width: 12px; height: 12px"
+          ></div>
+        </div>
+      </nav>
+      <div class="w-100 cf">
+        <div class="fl w-40 pa4 ml6 relative">
+          <img class="w-100" src="images/red-image.jpg" />
+          <h2
+            class="fw4 sans-serif-line absolute tc"
+            style="font-size: 100px; left:0; right: 0; margin-left: -20px; margin-right: -20px; top: 80px; line-height: 200px;"
+          >
+            Exercise your style
+          </h2>
+        </div>
+        <div class="fl w-30 f6 lh-copy" style="margin-top: 45vh">
+          Lattice Leggings <br />
+          White and Peach <br />
+          <span class="serif f4">$129</span> —
+          <a class="link underline">Shop Now</a>
+        </div>
+      </div>
+      <div class="vh-100 bg-dark-gray">Placeholder</div>
+      <div class="klaviyo-form-LJ2zTB"></div>
+    </div>
+
+    <script>
+      const nav = document.querySelector("#navigation");
+      const navTop = nav.offsetTop;
+
+      function stickyNavigation() {
+        console.log("navTop = " + navTop);
+        console.log("scrollY = " + window.scrollY);
+
+        if (window.scrollY >= navTop) {
+          // nav offsetHeight = height of nav
+          document.body.style.paddingTop = nav.offsetHeight + "px";
+          document.body.classList.add("fixed-nav");
+        } else {
+          document.body.style.paddingTop = 0;
+          document.body.classList.remove("fixed-nav");
+        }
+      }
+
+      window.addEventListener("scroll", stickyNavigation);
+    </script>
+    <script
+      async
+      type="text/javascript"
+      src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=HN2t9S"
+    ></script>
+  </body>
+</html>

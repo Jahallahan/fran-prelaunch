@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Lack";
+  src: url(fonts/Lack-Regular.woff2) format("woff2"),
+    url(fonts/Lack-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Lack Line";
+  src: url(fonts/Lack-Line-Regular.woff2) format("woff2"),
+    url(fonts/Lack-Line-Regular.woff) format("woff");
+}
+
+.sans-serif {
+  font-family: "Lack", sans-serif;
+}
+
+.sans-serif-line {
+  font-family: "Lack Line", sans-serif;
+}
+
+.serif {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.fixed-nav nav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
