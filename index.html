@@ -15,83 +15,88 @@
   </head>
 
   <body id="home" class="sans-serif">
-    <div
-      class="vh-100 vh-100 bg--light-grey cover bg-center relative"
-      style="background-image: url(images/banner.png);  background-attachment: fixed; z-index: -999px;"
-    >
-      <h1
-        class="fw4 tracked-tight fixed db ma0"
-        style="font-size: 200px; line-height:100vh"
+    <div class="relative">
+      <div
+        class="vh-100 vh-100 bg--light-grey cover bg-center relative"
+        style="background-image: url(images/banner.png);  background-attachment: fixed; z-index: -999px;"
       >
-        Fran.
-      </h1>
-    </div>
-    <div class="bg-white relative">
-      <nav id="navigation" class="db dt-l w-100 border-box pa4">
-        <h1 class="db dtc-l v-mid w-100 w-50-l tc tl-l mb2 mb0-l">
-          <span class="f-3 tracked-tight fw4">Fran.</span>
-          <span class="serif f-3 fw4">Personalised Activewear</span>
+        <h1
+          class="fw4 tracked-tight fixed db ma0"
+          style="font-size: 200px; line-height:100vh"
+        >
+          Fran.
         </h1>
-        <div class="db dtc-l v-mid w-100 w-50-l tc tr-l serif">
-          <a
-            class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
-            href="#"
-            title="Home"
-            >Selection</a
-          >
-          <a
-            class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
-            href="#"
-            title="How it Works"
-            >Experience</a
-          >
-          <a
-            class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
-            href="#"
-            title="Blog"
-            >Inspiration</a
-          >
-          <div
-            class=" dib br4 bg-moon-gray"
-            style="width: 12px; height: 12px"
-          ></div>
+      </div>
+      <div class="bg-white relative">
+        <nav id="navigation" class="db dt-l w-100 border-box pa4">
+          <h1 class="db dtc-l v-mid w-100 w-50-l tc tl-l mb2 mb0-l">
+            <span class="f-3 tracked-tight fw4">Fran.</span>
+            <span class="serif f-3 fw4">Personalised Activewear</span>
+          </h1>
+          <div class="db dtc-l v-mid w-100 w-50-l tc tr-l serif">
+            <a
+              class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
+              href="#"
+              title="Home"
+              >Selection</a
+            >
+            <a
+              class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
+              href="#"
+              title="How it Works"
+              >Experience</a
+            >
+            <a
+              class="link dim dark-gray f6 f4-l dib mr3 mr4-l"
+              href="#"
+              title="Blog"
+              >Inspiration</a
+            >
+            <div
+              class=" dib br4 bg-moon-gray"
+              style="width: 12px; height: 12px"
+            ></div>
+          </div>
+        </nav>
+        <div class="w-100 cf" id="main-body">
+          <div class="fl w-40 pa4 ml6 relative">
+            <img class="w-100" src="images/red-image.jpg" />
+            <h2
+              class="fw4 sans-serif-line absolute tc"
+              style="font-size: 100px; left:0; right: 0; margin-left: -20px; margin-right: -20px; top: 80px; line-height: 200px;"
+            >
+              Exercise your style
+            </h2>
+          </div>
+          <div class="fl w-30 f6 lh-copy" style="margin-top: 45vh">
+            Lattice Leggings <br />
+            White and Peach <br />
+            <span class="serif f4">$129</span> —
+            <a class="link underline">Shop Now</a>
+          </div>
         </div>
-      </nav>
-      <div class="w-100 cf">
-        <div class="fl w-40 pa4 ml6 relative">
-          <img class="w-100" src="images/red-image.jpg" />
-          <h2
-            class="fw4 sans-serif-line absolute tc"
-            style="font-size: 100px; left:0; right: 0; margin-left: -20px; margin-right: -20px; top: 80px; line-height: 200px;"
-          >
-            Exercise your style
-          </h2>
-        </div>
-        <div class="fl w-30 f6 lh-copy" style="margin-top: 45vh">
-          Lattice Leggings <br />
-          White and Peach <br />
-          <span class="serif f4">$129</span> —
-          <a class="link underline">Shop Now</a>
+        <div class="w-50-l w-100 center">
+          <div class="klaviyo-form-L9LvTJ"></div>
         </div>
       </div>
-      <div class="vh-100 bg-dark-gray">Placeholder</div>
-      <div class="klaviyo-form-L9LvTJ"></div>
     </div>
 
     <script>
       const nav = document.querySelector("#navigation");
-      const navTop = nav.offsetTop;
+      const mainBody = document.querySelector("#main-body");
+      const mainBodyViewportOffset = mainBody.getBoundingClientRect();
+      const mainBodyTop = mainBodyViewportOffset.top;
 
       function stickyNavigation() {
-        console.log("navTop = " + navTop);
+        console.log("mainBody = " + mainBodyTop);
         console.log("scrollY = " + window.scrollY);
 
-        if (window.scrollY >= navTop) {
+        if (window.scrollY >= mainBodyTop - nav.offsetHeight) {
           // nav offsetHeight = height of nav
-          document.body.style.paddingTop = nav.offsetHeight + "px";
+          mainBody.style.paddingTop = nav.offsetHeight + "px";
           document.body.classList.add("fixed-nav");
         } else {
-          document.body.style.paddingTop = 0;
+          mainBody.style.paddingTop = 0;
           document.body.classList.remove("fixed-nav");
         }
       }
